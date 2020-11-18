@@ -1,0 +1,39 @@
+{
+    "name" : "myrobot",
+    "appid" : "__UNI__9D97713",
+    "description" : "",
+    "versionName" : "1.0.37",
+    "versionCode" : 10037,
+    "transformPx" : false,
+    "app-plus" : {
+        "compatible" : {
+            "ignoreVersion" : true //true表示忽略版本检查提示框
+        },
+        /* 5+App特有相关 */
+        "modules" : {
+            "OAuth" : {}
+        },
+        "nvueCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        /* 模块配置 */
+        "distribute" : {
+            "splashscreen" : {
+                "android" : {
+                    "hdpi" : ""
+                }
+            }
+        },
+        "splashscreen" : {
+            "waiting" : true
+        }
+    },
+    /* 快应用特有相关 */
+    "h5" : {
+        "title" : "居然还有名字",
+        "domain" : "vnool.com",
+        "router" : {
+            "base" : "/app/"
+        }
+    },
+    "orientation" : [ "portrait-primary" ]
+}

@@ -1,0 +1,182 @@
+.index {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: white;
+	border-top: 1px solid #cccccc;
+}
+
+.vbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.top_back_img {
+	z-index: -1;
+	position: absolute;
+	top: 0upx;
+	width: 100%;
+	height: 420upx;
+	background-image:url('../../static/dulin/set-top-bg.png') ;
+}
+
+.top {
+	display: flex;
+	width: 100%;
+	height: 340upx;
+	align-items: center;
+}
+
+.circle {
+	margin-left: 100upx;
+	width: 150upx;
+	height: 150upx;
+	border: 10upx solid #a4f4f6;
+	border-radius: 150upx;
+	overflow: hidden;
+}
+
+.head {
+	width: 150upx;
+	height: 150upx;
+	border-radius: 200upx;
+}
+
+.top-texts {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15upx;
+	color: white;
+}
+
+.userid {
+	display: inline-block;
+	width: 320upx;;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	word-break: break-all; 
+	line-height: 36upx;;
+}
+
+.name {
+	font-size: 36upx;
+	font-weight: 500;
+}
+
+.set-top-hr {
+	width: 210upx;
+	height: 6upx;
+}
+
+.top-changeInfo {
+	margin: 50upx;
+	width: 220upx;
+	height: 58upx;
+	line-height: 1.5em;
+	background-color: #ffffff;
+	border-radius: 15upx;
+	padding: 10upx;
+	color: #33dce8;
+	font-size: 1em;
+}
+
+.shadow {
+	box-shadow: 3px 3px 4px rgba(26, 26, 26, 0.2)
+}
+
+.hide {
+	display: none;
+}
+
+.middle {
+	display: flex;
+	align-items: center;
+	position: relative;
+	top: -50upx;
+	width: 80%;
+	height: 100upx;
+	background-color: white;
+	border-radius: 15upx;
+}
+
+.middle-line {
+	width: 2upx;
+	height: 80upx;
+	background-color: #eeeeee;
+}
+
+.middle-left {
+	flex-grow: 1;
+	color: #666666;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.middle-right {
+	flex-grow: 1;
+	color: #666666;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.middle-icon {
+	width: 40upx;
+	height: 40upx;
+	margin-left: 20upx;
+}
+
+.middle-num {
+	color: #fcac45;
+	-webkit-font-smoothing: antialiased;
+}
+
+.cell {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+	height: 90upx;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cell:active {
+	background-color: #333;
+	color: white;
+	box-shadow: 1upx 1upx 35upx #ccc;
+}
+
+.cell-left {
+	display: flex;
+	align-items: center;
+	margin-left: 65upx;
+}
+
+.cell-text {
+	margin-left: 25upx;
+}
+
+.cell-right {
+	margin-right: 45upx;
+	height: 28upx;
+}
+
+.cell_icon {
+	width: 40upx;
+	height: 40upx;
+	height: 40upx;
+}
+
+.right-arrow {
+	color: #aaa;
+	width: 15upx;
+	height: 28upx;
+}
+
+.logout {
+	margin: 10%; 
+	margin-bottom: 20%;
+}

@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "1.初始化/依赖包": "npm install",
+	"2.更新/安装基座": "robot-tools init",
+	"3.发布": "robot-tools deploy"
+  },
+  "dependencies": {
+    "compressing": "^1.5.1",
+    "request": "^2.88.2",
+    "robot-tools": "^1.0.9",
+    "webpack": "^5.4.0"
+  }
+}
