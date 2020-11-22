@@ -114,9 +114,14 @@ var param = {
 }
  robot.start(param);
 ```
-...
+#### 机器人获取VUE发过来的参数
 ```js
-app.post2host("message"); //在机器人脚本里用这个方法给VUE层发消息
+app.args //json对象
+app.arguments
+```
+。
+```js
+app.post2host("message"); //机器人用这个方法给VUE层发消息
 ```
 
 #### 机器人脚本直接访问VUE页面对象
@@ -147,11 +152,7 @@ export default {
 }
 </script>
 ```
-#### 机器人获取VUE发过来的参数
-```js
-app.args //json对象
-app.arguments
-```
+
 
 
 
@@ -388,10 +389,9 @@ console.window.myid.setTextSize(20) //设置字体大小（请在自定义layout
 ```
 
 
-## 重点
 
-**还有很多功能函数，需要找我查询，太多，没时间写**
-`滑动，长按，与主程序通信，系统事件`
+## 7. 手指操作
+ 
 
 ```js
 //滑动
