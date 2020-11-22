@@ -98,41 +98,36 @@ export default {
 .
 .
 .
-带参数，回调函数
+#### 参数解释
 ```js
 var {robot} = require('robot-tools.js');
- 
+robot.start(param); 
 var param = { 
-     file: 'demo.js',
-     arguments:{
-	   a: 5, 
-	   b: 8,  
-     },
-     onMessage:function(data){
-		 console.log(data); //收到机器人的消息
-	 }
+     file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径，或URL
+     arguments: {}, //json,传递给机器人的参数
+     onMessage: ()=>{} //回调函数，机器人给VUE发送消息
 }
- robot.start(param);
+ 
 ```
 #### 机器人获取VUE发过来的参数
 ```js
 app.args //json对象
 app.arguments
 ```
-。
+#### 机器人给VUE层发消息
 ```js
 app.post2host("message"); //机器人用这个方法给VUE层发消息
 ```
 
 #### 机器人脚本直接访问VUE页面对象
 ```js
-app.vue.xxxx  //直接访问vue对应模块
+app.vue  //机器人直接访问vue对应模块
 app.vue.abc   //访问data里的abc变量
 app.vue.abc = 999; //给data里面的abc赋值
 app.vue.test() //访问methods里面的 test函数
 
 ```
-#### 例vue
+#### 例index.vue
 ```html
 <template>
 <view> 
@@ -157,7 +152,11 @@ export default {
 
 
 # AutoJs新手/老手，阅读
-**  支持AutoJS的全部API， 补充了一些 **
+### 支持AutoJS的全部API， 补充了一些 
+1. 启动app
+```js
+app.launch("企业微信");
+```
 ## 1. 点击
 ```js
 click全局函数[推荐] *无论元素是否有clickable属性，都会强制点击到对应的坐标上
@@ -193,7 +192,7 @@ click(text('购物车').findOne()); //(推荐)点击购物车，此方法点击�
 ```
 
 #### 点击进入页面，然后再回来
-* 适合多页面跳来跳去的交互场景
+* 适合多页面跳来跳去的交互场景 *
 ```js
 click(desc('购物车'), function(){
 	;;//进去页面了，干点啥
