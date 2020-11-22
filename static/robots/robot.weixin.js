@@ -4,6 +4,7 @@ setScreenMetrics(1080, 1920);
 log('开始');
 
 print(app.arguments);
+print(app.args);
 var args = JSON.parse(app.arguments);
 
 launchApp("微信");

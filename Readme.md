@@ -21,21 +21,27 @@
    
 2. 用[HbuilderX](https://www.dcloud.io/hbuilderx.html) (绿色图标那个) 打开项目
 
-3. **配置** 
+3. **配置菜单：**
 
-   菜单：
-   a.运行/手机或模拟器/运行基座选择/(勾)自定义。
-   b. 运行/运行到终端/npm run 更新/基座。
-   c. npm run (安装依赖包)。
-4. **执行**: 
+   a. 运行/手机或模拟器/运行基座选择/(勾)自定义。
+   
+   b. 运行/运行到终端, 依次运行这 命令 1,2
+   ```js
+   {
+    "1.初始化/依赖包": "npm install",
+   	"2.更新/安装基座": "robot-tools init"
+   }
+   ```
+4. **执行 (调试/运行)**: 
 
-    (调试/运行)
-    连接手机(需ADB生效)，菜单：运行/手机或模拟器/选择你的手机名字
+	`a. 连接手机(需ADB生效)`
+	`b. 菜单：运行/手机或模拟器/选择你的手机名字`
 5. **发布/升级** 
 
-    (用户端手机自动升级)
+    (最终用户端手机自动升级)
     
-    (a). 发行/本地打包/生成app资源   (b) 运行/运行到终端/发布
+    `(a) 发行/本地打包/生成app资源 `  
+	`(b) 运行/运行到终端/发布`
     
 [为啥截图经常不展示,github兄 ？]
 <img src='http://robots.vnool.com:81/static/git/1.jpg'>
@@ -53,7 +59,7 @@
 
 ## 从UI启动机器人
 
-【第1步】. 新建机器人脚本： 在项目路径~/static/robots下新建文件demo.js
+#### 【第1步】. 新建机器人脚本： 在项目路径~/static/robots下新建文件demo.js
 ```js
 launchApp("微信"); 
 click("发现"); 
@@ -63,7 +69,7 @@ click("赞");
 ```
  
 
-【第2步】. 修改页面内容 pages/index/index.vue
+#### 【第2步】. 修改页面内容 pages/index/index.vue
 ```html
 <template>
 <view> 
@@ -75,22 +81,22 @@ click("赞");
 var {robot} = require('robot-tools.js');
 export default {
     methods: {
-	test(){
-		var param = { 
-		   file: 'demo.js', 
+		test(){
+			var param = { 
+			   file: 'demo.js', 
+			}
+			robot.stop();
+			robot.start(param);
 		}
-	        robot.stop();
-		robot.start(param);
-        }
 }
 </script>
 ```
-【第3步】. 在Hbuilder中启动，菜单
+#### 【第3步】. 在Hbuilder中启动，菜单
 `运行/手机或模拟器/选择你的手机`
-
+(此时手机上会自动安装running这个app)，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
 
 .
-
+.
 .
 带参数，回调函数
 ```js
@@ -102,14 +108,55 @@ var param = {
 	   a: 5, 
 	   b: 8,  
      },
-     onMessage:function(res){}
+     onMessage:function(data){
+		 console.log(data); //收到机器人的消息
+	 }
 }
  robot.start(param);
 ```
+...
+```js
+app.post2host("message"); //在机器人脚本里用这个方法给VUE层发消息
+```
+
+#### 机器人脚本直接访问VUE页面对象
+```js
+app.vue.xxxx  //直接访问vue对应模块
+app.vue.abc   //访问data里的abc变量
+app.vue.abc = 999; //给data里面的abc赋值
+app.vue.test() //访问methods里面的 test函数
+
+```
+#### 例vue
+```html
+<template>
+<view> 
+	{{abc}}
+</view>
+</template>
+<script> 
+var {robot} = require('robot-tools.js');
+export default {
+	data:{
+		abc: 123
+	}
+    methods: {
+		test(){
+			console.log('call test');
+		}
+}
+</script>
+```
+#### 机器人获取VUE发过来的参数
+```js
+app.args //json对象
+app.arguments
+```
+
 
 
 # AutoJs新手/老手，阅读
-** 支持AutoJS的全部API， 补充了一些 **
+**  支持AutoJS的全部API， 补充了一些 **
 ## 1. 点击
 ```js
 click全局函数[推荐] *无论元素是否有clickable属性，都会强制点击到对应的坐标上
@@ -140,7 +187,6 @@ click(desc('购物车').findOne());	 //
 click(desc('购物车').findOne(), -10,-10);	 //购物车的左上角 10,10点击一下 ，以购物车的左上角为参考
 click(desc('购物车').findOne(), 10,10);	 //购物车的右下角 10,10点击一下 ，以购物车的 右下角为参考
 click(desc('购物车'), 10,10);
-
 text('购物车').findOne().click(); //点击购物车，此方法点击的是元素本身(如果元素只是普通文本，则会失效)
 click(text('购物车').findOne()); //(推荐)点击购物车，此方法点击的是屏幕，如果自己不可点击，会把事件传递给父控件
 ```
@@ -152,12 +198,10 @@ click(desc('购物车'), function(){
 	;;//进去页面了，干点啥
 	//处理完毕后，会回到原页面
 });
-
 click('粉丝', () => { 
 		var pp = desc('粉丝列表').findOne();
 		var fanslist = listChildren(pp);
 		dosomthing(fanslist);
-
 	});
 ```
 
