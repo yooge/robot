@@ -79,7 +79,7 @@ click("赞");
 </view>
 </template>
 <script> 
-var {robot} = require('robot-tools.js');
+var {robot} = require('robot-tools');
 export default {
     methods: {
 		test(){
@@ -101,7 +101,7 @@ export default {
 .
 #### 参数解释
 ```js
-var {robot} = require('robot-tools.js');
+var {robot} = require('robot-tools');
 var param = { 
      file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径，或URL
      arguments: {}, //json,传递给机器人的参数
@@ -135,7 +135,7 @@ app.vue.test() //访问methods里面的 test函数
 </view>
 </template>
 <script> 
-var {robot} = require('robot-tools.js');
+var {robot} = require('robot-tools');
 export default {
 	data:{
 		abc: 123
