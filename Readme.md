@@ -323,7 +323,7 @@ currentPackage();
 waitForActivity("*.launch.WwMainActivity", 4000);
 //建议多使用，等待内容出现的函数 waitFor
 ```
-4. 点击返回键，到某窗口(有点费劲， 推荐使用click的回调功能)
+4. (从深层堆栈中回退)一直点击返回键，让页面一直返回，直至遇到某窗口(有点费劲， 推荐使用click的回调功能)
 ```js
 //参数：窗口类名/或数组，包名，超时时间，忽略其他窗口的存在；
 //返回: 该类名（有点复杂，可以放弃，请参考4.2）
@@ -334,7 +334,7 @@ back2activity("*.launch.WwMainActivity","com.tencent.wework", 12000, ["*.xxActiv
 //也可以是数组，返回对应的类名
 back2activity(["*.launch.WwMainActivity", "*.LaunchSplashActivity"]);
 ```
-4.2 点击返回键，到包含某些内容的窗口
+4.2 从深层堆栈中回退) 一直点击返回键，让页面一直返回，直至遇到某窗口
 ```js
 //自动点击返回键，回调页面包含xx内容的窗口
 //matchList可以为字符串，或数组， 回到包含该内容的页面，参考 matchContents函数
