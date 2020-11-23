@@ -101,13 +101,12 @@ export default {
 #### 参数解释
 ```js
 var {robot} = require('robot-tools.js');
-robot.start(param); 
 var param = { 
      file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径，或URL
      arguments: {}, //json,传递给机器人的参数
      onMessage: ()=>{} //回调函数，机器人给VUE发送消息
 }
- 
+robot.start(param); 
 ```
 #### 机器人获取VUE发过来的参数
 ```js
