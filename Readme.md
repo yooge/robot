@@ -103,11 +103,20 @@ export default {
 ```js
 var {robot} = require('robot-tools');
 var param = { 
-     file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径，或URL
+     file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
      arguments: {}, //json,传递给机器人的参数
      onMessage: ()=>{} //回调函数，机器人给VUE发送消息
 }
+//启动机器人
 robot.start(param); 
+
+//立即执行
+robot.exec(function(){
+  ////在vue的代码文件里，直接执行机器人代码，(测试中)
+  //click('朋友圈');
+})
+
+robot.stop();
 ```
 #### 机器人获取VUE发过来的参数
 ```js
