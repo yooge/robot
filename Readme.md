@@ -103,18 +103,20 @@ export default {
 ```js
 var {robot} = require('robot-tools');
 var param = { 
+	 vue: this, //可选, 用来给机器人直接访问的对象，你也可以传别的对象(不支持访问开头为“$或_”的函数或属性)。 
      file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
-     arguments: {}, //json,传递给机器人的参数
+     arguments: {}, //可选, json,传递给机器人的参数
      onMessage: ()=>{} //回调函数，机器人给VUE发送消息
 }
 //启动机器人
 robot.start(param); 
 
-//立即执行
-robot.exec(function(){
-  ////在vue的代码文件里，直接执行机器人代码，(测试中)
+/* 立即执行 (测试中)
+robot.exec(function(){ 
+  ////在vue的代码文件里，直接执行机器人代码，
   //click('朋友圈');
 })
+*/
 
 robot.stop();
 ```
@@ -130,7 +132,7 @@ app.post2host("message"); //机器人用这个方法给VUE层发消息
 
 #### 机器人脚本直接访问VUE页面对象
 ```js
-app.vue  //机器人直接访问vue对应模块
+app.vue  //机器人直接访问vue的对象，上面传递进来的对象this(或别的对象)
 app.vue.abc   //访问data里的abc变量
 app.vue.abc = 999; //给data里面的abc赋值
 app.vue.test() //访问methods里面的 test函数
@@ -256,8 +258,26 @@ descContains("评论数").findOne();
 
 //9.
 //对象在屏幕内，比如查找抖音的点赞按钮时，会有两个在屏幕外。就需要这个函数来锁定
-inScreen(desc('赞'))  
-inScreenOne(desc('赞')) 
+inScreen(desc('赞'));
+inScreenOne(desc('赞'));
+//或者 用扩展搜索
+desc('赞').visibleToUser(true);  //控件是否可见。
+
+//10 其他扩展搜索条件:
+/*
+bounds(0,0, 600, 900) 控件在屏幕上的范围。
+indexInParent(2) 控件在父控件的位置。
+editable(true) 控件是否可编辑。
+visibleToUser(true) 控件是否可见。
+drawingOrder(2) 控件在父控件的绘制顺序。
+clickable(true) 控件是否可点击。
+longClickable(true) 控件是否可长按。
+checkable(true) 控件是否可勾选。
+checked(true) 控件是否可已勾选。
+scrollable(true) 控件是否可滑动。
+selected(true) 控件是否已选择。
+enabled(true)
+*/
 ```
 ### 3.0 控件的[属性]
 `** 控件有很多属性，请打印一下获取的对象看看`

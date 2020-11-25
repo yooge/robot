@@ -61,6 +61,7 @@
 		methods: {
 			startNow() { 
 				var param = { 
+					vue: this, //可选,你也可以传别的对象，或者不传
 					file: 'robot.douyin.js',
 					arguments: {
 						max: this.max	 
