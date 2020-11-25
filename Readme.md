@@ -44,7 +44,11 @@
     `(a) 发行/本地打包/生成app资源 `  
 	`(b) 运行/运行到终端/发布`
     
-[为啥截图经常不展示,github兄 ？]
+[效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
+[效果图2](http://robots.vnool.com:81/static/git/3.jpg)，
+[效果图3](http://robots.vnool.com:81/static/git/6.jpg)，
+[效果图4](http://robots.vnool.com:81/static/git/5.jpg)，
+
 <img src='http://robots.vnool.com:81/static/git/1.jpg'>
 <img src='http://robots.vnool.com:81/static/git/3.jpg' width="300">
 <img src='http://robots.vnool.com:81/static/git/6.jpg' width="300">
