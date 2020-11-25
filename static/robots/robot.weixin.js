@@ -5,7 +5,7 @@ log('开始');
 
 print(app.arguments);
 print(app.args);
-var args = JSON.parse(app.arguments);
+var args =  app.args;
 
 launchApp("微信");
 if (desc('拍照分享').findOne(3000) == null) {
@@ -21,9 +21,7 @@ for (var i = 0; i < 10; i++) {
 	doit();
 	sleep(3000);
 	scrollForward(); //翻页
-
 }
-
 
 function doit() {
 

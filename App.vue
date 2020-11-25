@@ -4,8 +4,7 @@ global.IS_H5 = false;
 // #ifndef APP-PLUS
 global.IS_H5 = true;
 //#endif
-
-console.log('global.IS_H5= ' + global.IS_H5);
+ 
 export default {
 	onLaunch: function() {
 		require('app.style.js');
