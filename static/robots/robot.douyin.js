@@ -5,8 +5,12 @@ sleep(3000);
 
 var Max = 10;
 for (var i = 0; i < Max; i++) {
-	swipeUp(1300);
-	sleep(3000);
+	swipeUp();
+	
+	sleep(2000);
+	if(text('点击进入直播间').exists()){
+		continue;
+	}
 	like();
 	sleep(2000);
 	comment();

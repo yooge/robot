@@ -1,6 +1,6 @@
 <frame bg="#88000000" layout_gravity="top" textColor="red">
 	<vertical gravity="left" id="mainbox"> 
-		<text h="auto" id="title"   textSize="10sp" textColor="white"  w="auto">
+		<text h="auto" id="title"   textSize="16dp" textColor="white"  w="auto">
 			 关闭: 音量上
 		</text>
 		<text id="body" gravity="bottom" w="auto">

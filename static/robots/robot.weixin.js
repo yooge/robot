@@ -1,11 +1,13 @@
 auto();
-setScreenMetrics(1080, 1920);
- 
-log('开始');
+//setScreenMetrics(1080, 1920);
 
-print(app.arguments);
-print(app.args);
-var args =  app.args;
+//觉得碍眼，就注释掉这几行。（悬浮半透明日志窗口） 
+console.useNew('patchs/log_layout.xml');
+console.show(); //日志输出到屏幕
+console.title('任务：朋友圈骚扰');
+console.log('start');
+
+var args = app.args;
 
 launchApp("微信");
 if (desc('拍照分享').findOne(3000) == null) {
@@ -48,7 +50,7 @@ function doit() {
 
 }
 
- 
+
 function log(txt) {
 	console.log(txt);
 }
