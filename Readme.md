@@ -1,5 +1,5 @@
  
-## 特性
+## AutoJs-Vue 特性
 
 1. 全面支持(信息量很大):  [AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/), [VUE](https://cn.vuejs.org/),
 [color-Ui](http://demo.color-ui.com/),
@@ -11,11 +11,22 @@
 3. 项目自动部署，自动升级，代码加密
 4. 无目标APP限制
 
-#### QQ群： 1037025652
+## QQ群： 1037025652
 
+[效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
+[效果图2](http://robots.vnool.com:81/static/git/3.jpg)，
+[效果图3](http://robots.vnool.com:81/static/git/6.jpg)，
+[效果图4](http://robots.vnool.com:81/static/git/5.jpg)，
+
+<img src='http://robots.vnool.com:81/static/git/1.jpg'>
+<img src='http://robots.vnool.com:81/static/git/3.jpg' width="300">
+<img src='http://robots.vnool.com:81/static/git/6.jpg' width="300">
+<img src='http://robots.vnool.com:81/static/git/5.jpg' width="300">
+ 
 
 ## 开始
-1. 下载本源码，(你也可以下载一个最简单的)
+1. 下载本源码，
+   网速不好的可以从这里下载 `https://gitee.com/vnool/autojs-vue`
 
    `(参考代码: 目录 pages/robots/ 和  static/robots/)`
    
@@ -37,23 +48,14 @@
 
 	`a. 连接手机(需ADB生效)`
 	`b. 菜单：运行/手机或模拟器/选择你的手机名字`
-5. **发布/升级** 
+5. **发布/升级，生成APK** 
 
     (最终用户端手机自动升级)
     
-    `(a) 发行/本地打包/生成app资源 `  
-	`(b) 运行/运行到终端/发布`
+    `(a) 发行/本地打包/生成app资源 `
+    `(b) 运行/运行到终端/发布`
     
-[效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
-[效果图2](http://robots.vnool.com:81/static/git/3.jpg)，
-[效果图3](http://robots.vnool.com:81/static/git/6.jpg)，
-[效果图4](http://robots.vnool.com:81/static/git/5.jpg)，
 
-<img src='http://robots.vnool.com:81/static/git/1.jpg'>
-<img src='http://robots.vnool.com:81/static/git/3.jpg' width="300">
-<img src='http://robots.vnool.com:81/static/git/6.jpg' width="300">
-<img src='http://robots.vnool.com:81/static/git/5.jpg' width="300">
- 
  
 ## 开始 ##
 #### 1. 你可以直接修改本项目代码
@@ -86,8 +88,8 @@ click("赞");
 var {robot} = require('robot-tools');
 export default {
     methods: {
-		test(){
-			var param = { 
+        test(){
+            var param = { 
 			   file: 'demo.js', 
 			}
 			robot.stop();
@@ -107,7 +109,7 @@ export default {
 ```js
 var {robot} = require('robot-tools');
 var param = { 
-	 vue: this, //可选, 用来给机器人直接访问的对象，你也可以传别的对象(不支持访问开头为“$或_”的函数或属性)。 
+     vue:  this, //可选, 用来给机器人直接访问的对象，你也可以传别的对象(不支持访问开头为“$或_”的函数或属性)。 
      file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
      arguments: {}, //可选, json,传递给机器人的参数
      onMessage: ()=>{} //回调函数，机器人给VUE发送消息
