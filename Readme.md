@@ -1,15 +1,16 @@
  
 ## AutoJs-Vue 特性
 
-1. 全面支持(信息量很大):  [AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/), [VUE](https://cn.vuejs.org/),
+#### 1. 全面支持(信息量很大):  
+[AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/), [VUE](https://cn.vuejs.org/),
 [color-Ui](http://demo.color-ui.com/),
 [HTML5plus](http://www.html5plus.org/doc/), 
 以及一些主流App的SDK调用，
 [N多接口](https://github.com/dcloudio/uni-app/tree/master/docs/api), 
 
-2. 给AutoJS增加了一些好用的封装
-3. 项目自动部署，自动升级，代码加密
-4. 无目标APP限制
+#### 2. 给AutoJS增加了一些好用的封装
+#### 3. 项目自动部署，自动升级，代码加密
+#### 4. 无目标APP限制
 
 ## QQ群： 1037025652
 
@@ -109,10 +110,10 @@ export default {
 ```js
 var {robot} = require('robot-tools');
 var param = { 
-     vue:  this, //可选, 用来给机器人直接访问的对象，你也可以传别的对象(不支持访问开头为“$或_”的函数或属性)。 
-     file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
-     arguments: {}, //可选, json,传递给机器人的参数
-     onMessage: ()=>{} //回调函数，机器人给VUE发送消息
+    file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
+	vue:  this, //可选, 将本vue对象传递给机器人
+    arguments: {}, //可选, json,传递给机器人的参数。[提示]如果不传递，则系统会默认使用'当时'的vue的data数据
+    onMessage: ()=>{} //回调函数，机器人给VUE发送消息， 感觉快淘汰了
 }
 //启动机器人
 robot.start(param); 
@@ -126,7 +127,7 @@ robot.exec(function(){
 
 robot.stop();
 ```
-#### 机器人获取VUE发过来的参数
+#### 机器人获取VUE发过来的参数(启动机器人时传递的)
 ```js
 app.args //json对象
 app.arguments
@@ -141,7 +142,7 @@ app.post2host("message"); //机器人用这个方法给VUE层发消息
 app.vue  //机器人直接访问vue的对象，上面传递进来的对象this(或别的对象)
 app.vue.abc   //访问data里的abc变量
 app.vue.abc = 999; //给data里面的abc赋值
-app.vue.test() //访问methods里面的 test函数
+app.vue.test() //访问methods里面的 test函数。 此用法可以淘汰上面的onMessage回调
 
 ```
 #### 例index.vue

@@ -18,7 +18,7 @@ if (desc('拍照分享').findOne(3000) == null) {
 sleep(3000);
 swipeUp();
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 100; i++) {
 	sleep(3000);
 	doit();
 	sleep(3000);
@@ -27,25 +27,27 @@ for (var i = 0; i < 10; i++) {
 
 function doit() {
 
-	var Point = swipeTo(desc("评论"));
+	var Point = swipeTo(desc("评论").boundsInside(0, 200, device.width, device.height * 0.8));
 
-	Point.click();
-
-	if (text("赞").findOne(1000) != null) {
-		click("赞");
-		sleep(2000);
+	if (1 == 1) {
 		Point.click();
+		if (text("赞").exists()) {
+			click("赞");
+			sleep(2000);
+
+
+		}
 	}
+	if (1 == 1) { 
+		Point.click();
+		click("评论");
+		sleep(2000);
+		setText(args.comment);
+		sleep(500);
 
-
-	click("评论");
-	sleep(2000);
-	setText(args.comment);
-	sleep(500);
-
-	click("发送");
-	log('评论了：xxxxx');
-
+		click("发送");
+		log('评论了：xxxxx');
+	}
 	sleep(args.interval);
 
 }

@@ -63,20 +63,19 @@
 				var param = { 
 					vue: this, //可选,你也可以传别的对象，或者不传。 用来给机器人直接访问的
 					file: 'robot.douyin.js',
-					arguments: {
-						max: this.max	 
-					}
+					// arguments: {
+					// 	max: this.max	 
+					// }  如果传入了VUE，这个参数不传，则会自动使用vue的data数据作为参数
 				} 
 				robot.stop();
 				robot.start(param); 
 			},
-			start() { 
-				var data = {
-					max: this.max	 
-				}; 
+			start() {  
 				var param = { 
 					file: 'robot.douyin.js',
-					arguments:data,
+					arguments: {
+						max: this.max	 
+					},
 					onMessage:function(res){}
 				}
 				console.log("start At menu");
