@@ -1,18 +1,25 @@
  
-## AutoJs-Vue 特性
-【认真扫文档，不走弯路】
-#### 1. 全面支持(信息量很大):  
-[AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/), [VUE](https://cn.vuejs.org/),
-[color-Ui](http://demo.color-ui.com/),
-[HTML5plus](http://www.html5plus.org/doc/), 
-以及一些主流App的SDK调用，
-[N多接口](https://github.com/dcloudio/uni-app/tree/master/docs/api), 
+# AutoJs-Vue 特性
 
-#### 2. 给AutoJS增加了一些好用的封装
+## 帮助开发者生产更友好的AutoJS程序
+#### 1. 全面支持(信息量很大):  
+[AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/)：全接口支持
+
+[VUE](https://cn.vuejs.org/)：著名的渐进式JavaScript框架(傻瓜->高手),
+
+[color-Ui](http://demo.color-ui.com/)： 优雅的前端视觉交互设计
+
+[HTML5plus](http://www.html5plus.org/doc/)：让JS拥有与App一样的能力标准
+
+[N多接口](https://github.com/dcloudio/uni-app/tree/master/docs/api)：增强系统访问功能
+
+[插件社区](https://ext.dcloud.net.cn/),  
+[uni开发者社群](https://dcloud.io/),uni的参与者600万+， 12亿手机端月活用户
+
+#### 2. 对AutoJS接口进行了一些增加
 #### 3. 项目自动部署，自动升级，代码加密
 #### 4. 无目标APP限制
-#### 5. [插件社区](https://ext.dcloud.net.cn/), uni的参与者600万+， 12亿手机端月活用户
-
+#### 5. 
 ## QQ群： 1037025652
 
 [效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
@@ -170,15 +177,18 @@ export default {
 
 
 
-# AutoJs新手/老手，阅读
+# AutoJs 新手/老手，请阅读
 ### 支持AutoJS的全部API， 补充了一些 
 1. 启动app
 ```js
 app.launch("企业微信");
 ```
 ## 1. 点击
+
+#### click全局函数[推荐] 
+#### 无论元素是否有clickable属性，都会强制点击到对应的坐标上
+
 ```js
-click全局函数[推荐] *无论元素是否有clickable属性，都会强制点击到对应的坐标上
 click("按钮1");
 click("赞", 0);  //点击第0个赞
 ```
@@ -255,7 +265,7 @@ waitFor("消息", 5000);
 waitGone("消息");
 waitGone("消息", 5000);
 //7. 
-textEx  //是text的临时增强版
+textEx  //是text的临时补充版
 textEx("#") //查找输入框
 textEx("#139101") //查找输入框，里面内容为139101
 textEx("#*请输入") //查找输入框，里面内容 包含 请输入
@@ -361,7 +371,7 @@ currentPackage();
 waitForActivity("*.launch.WwMainActivity", 4000);
 //建议多使用，等待内容出现的函数 waitFor
 ```
-4. (从深层堆栈中回退)一直点击返回键，让页面一直返回，直至遇到某窗口(有点费劲， 推荐使用click的回调功能)
+4. (从深层堆栈中回退)一直点击返回键，让页面一直返回，直至遇到某窗口(# 有点费劲， 推荐使用click的回调功能)
 ```js
 //参数：窗口类名/或数组，包名，超时时间，忽略其他窗口的存在；
 //返回: 该类名（有点复杂，可以放弃，请参考4.2）
@@ -401,10 +411,11 @@ notifications(); //拉出通知栏
 
 ```js
 sleep(1000);//暂停1秒
-
+//
 console.log("xxxxx"); //会同时打印到电脑,手机
 console.show();  //打开悬浮日志窗口(日志同时会往这里输出)
-console.useNew(); //使用新的模式(使下面的这些功能)
+//
+console.useNew(); //使用新的模式!!(使下面的这些功能)
 console.useNew('patchs/log_layout.xml'); //指定layout
 console.log2ide("xxxx"); //仅仅显示在电脑里
 console.log2app("xxxx");  //仅仅显示在手机上
@@ -533,4 +544,6 @@ var point = findColor(img, "#00ff00", {
  
 ## QQ群：  1037025652
  
-
+```js
+  如果喜欢这个项目，可以请我一包华子 
+```
