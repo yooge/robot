@@ -33,7 +33,7 @@
 <img src='http://robots.vnool.com:81/static/git/5.jpg' width="300">
  
 
-## 开始
+## 环境准备
 1. 下载本源码，
    网速不好的可以从这里下载 `https://gitee.com/vnool/autojs-vue`
 
@@ -66,7 +66,7 @@
     
 
  
-## 开始 ##
+## 开始编码 ##
 #### [方案1]. 你可以直接修改本项目的代码
 ```
 目录: 
