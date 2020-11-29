@@ -67,13 +67,17 @@
 
  
 ## 开始 ##
-#### 方案1. 你可以直接修改本项目代码
-目录 UI：pages/robots/ 和 脚本 static/robots/
+#### [方案1]. 你可以直接修改本项目的代码
+```
+目录: 
+UI：pages/robots/ 
+脚本: static/robots/
+```
 
-#### 方案2. 也可以手动编写，如下
-#### 2.2 或者克隆小项目: https://github.com/yooge/autojs-vue-mini
+#### [方案2]. 手动编写代码，如下
+#### 2.2 或者克隆小项目开始: https://github.com/yooge/autojs-vue-mini
 
-## 从UI启动机器人(方案1)
+## 从UI启动机器人(方案2)
 
 #### 【第1步】. 新建机器人脚本： 在项目路径~/static/robots下新建文件demo.js
 ```js
