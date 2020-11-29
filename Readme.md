@@ -13,8 +13,7 @@
 
 [N多接口](https://github.com/dcloudio/uni-app/tree/master/docs/api)：增强系统访问功能
 
-[插件社区](https://ext.dcloud.net.cn/),  
-[uni开发者社群](https://dcloud.io/),uni的参与者600万+， 12亿手机端月活用户
+[插件社区](https://ext.dcloud.net.cn/), [uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
 
 #### 2. 对AutoJS接口进行了一些增加
 #### 3. 项目自动部署，自动升级，代码加密
