@@ -1,6 +1,6 @@
  
 ## AutoJs-Vue 特性
-
+【认真扫文档，不走弯路】
 #### 1. 全面支持(信息量很大):  
 [AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/), [VUE](https://cn.vuejs.org/),
 [color-Ui](http://demo.color-ui.com/),
@@ -11,6 +11,7 @@
 #### 2. 给AutoJS增加了一些好用的封装
 #### 3. 项目自动部署，自动升级，代码加密
 #### 4. 无目标APP限制
+#### 5. [插件社区](https://ext.dcloud.net.cn/), uni的参与者600万+， 12亿手机端月活用户
 
 ## QQ群： 1037025652
 
