@@ -13,8 +13,7 @@
 
 [N多接口](https://github.com/dcloudio/uni-app/tree/master/docs/api)：增强系统访问功能
 
-[插件社区](https://ext.dcloud.net.cn/),  
-[uni开发者社群](https://dcloud.io/),uni的参与者600万+， 12亿手机端月活用户
+[插件社区](https://ext.dcloud.net.cn/), [uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
 
 #### 2. 对AutoJS接口进行了一些增加
 #### 3. 项目自动部署，自动升级，代码加密
@@ -33,7 +32,7 @@
 <img src='http://robots.vnool.com:81/static/git/5.jpg' width="300">
  
 
-## 开始
+## 环境准备
 1. 下载本源码，
    网速不好的可以从这里下载 `https://gitee.com/vnool/autojs-vue`
 
@@ -66,14 +65,18 @@
     
 
  
-## 开始 ##
-#### 1. 你可以直接修改本项目代码
-目录 UI：pages/robots/ 和 脚本 static/robots/
+## 开始编码 ##
+#### [方案1]. 你可以直接修改本项目的代码
+```
+目录: 
+UI：pages/robots/ 
+脚本: static/robots/
+```
 
-#### 2. 也可以手动编写，如下
-或者克隆小项目: http://稍等一下
+#### [方案2]. 手动编写代码，如下
+#### 2.2 或者克隆小项目开始: https://github.com/yooge/autojs-vue-mini
 
-## 从UI启动机器人
+## 从UI启动机器人(方案2)
 
 #### 【第1步】. 新建机器人脚本： 在项目路径~/static/robots下新建文件demo.js
 ```js
