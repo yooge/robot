@@ -1,8 +1,8 @@
 {
   "scripts": {
     "1.初始化/依赖包": "npm install",
-    "2.更新/安装基座": "robot-tools init",
-    "3.发布": "robot-tools deploy"
+    "2.更新/安装调试的apk": "robot-tools init",
+    "3.加密/打包/热补丁": "robot-tools deploy"
   },
   "dependencies": {
     "compressing": "^1.5.1",
