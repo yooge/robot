@@ -18,7 +18,6 @@
 #### 2. 对AutoJS接口进行了一些增加
 #### 3. 项目自动部署，自动升级，代码加密
 #### 4. 无目标APP限制
-#### 5. 
 ## QQ群： 1037025652
 
 [效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
@@ -32,49 +31,41 @@
 <img src='http://robots.vnool.com:81/static/git/5.jpg' width="300">
  
 
-## 环境准备
-1. 下载本源码，
-   网速不好的可以从这里下载 `https://gitee.com/vnool/autojs-vue`
-
-   `(参考代码: 目录 pages/robots/ 和  static/robots/)`
-   
-2. 用[HbuilderX](https://www.dcloud.io/hbuilderx.html) (绿色图标那个) 打开项目
-
-3. **配置菜单：**
-
-   a. 运行/手机或模拟器/运行基座选择/(勾选)自定义基座。
-   **（如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在）**
-   
-   b. 运行/运行到终端, 依次运行这 命令 1,2
-   ```js
-   {
-    "1.初始化/依赖包": "npm install",
-    "2.更新/安装基座": "robot-tools init"
-   }
-   ```
-4. **执行 (调试/运行)**: 
-
-	`a. 连接手机(需ADB生效)`
-	`b. 菜单：运行/手机或模拟器/选择你的手机名字`
-5. **发布/升级，生成APK** 
-
-    (最终用户端手机自动升级)
-    
-    `(a) 发行/本地打包/生成app资源 `
-    `(b) 运行/运行到终端/发布`
-    
-
- 
-## 开始编码 ##
-#### [方案1]. 你可以直接修改本项目的代码
-```
-目录: 
-UI：pages/robots/ 
-脚本: static/robots/
-```
-
-#### [方案2]. 手动编写代码，如下
-#### 2.2 或者克隆小项目开始: https://github.com/yooge/autojs-vue-mini
+### 运行项目
+1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
+	> 推荐下载使用HbuilderX App开发版 进行开发
+2. 克隆或下载源码
+	###### 示例项目 
+		此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。
+	项目地址：[https://github.com/yooge/robot](https://github.com/yooge/robot)
+	
+	###### 空白项目(最小化项目)
+		此方式为一个空白的AJ_VUE示例工程，无任何组件，熟练开发后推荐下载此版本
+	项目地址：[https://github.com/yooge/autojs-vue-mini](https://github.com/yooge/autojs-vue-mini)
+3. 运行示例项目
+	1. 初始化项目文件
+		>  1. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 1.初始化/依赖包
+		>  2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 2.更新/安装基座
+	2. 配置运行基座
+		<br>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在
+		>  HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座
+	3. 执行 (调试/运行)
+		###### 运行到手机 
+		>  1. 连接手机(需ADB生效) 
+		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择你的手机名字
+		
+		###### 运行到模拟器
+		>  1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
+		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
+	4. 发布/升级，生成APK
+		>  1. HbuilderX开发工具顶部 -> 发行 -> 本地打包 -> 生成app资源
+		>  2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 发布
+4. 开始编码
+	<br>推荐大致了解Vue项目结构后进行
+	```
+	项目主体UI：pages/		用于编写前端代码 
+	项目AJ脚本：staic/robots/	用于编写AJ代码
+	```
 
 ## 从UI启动机器人(方案2)
 
@@ -121,10 +112,10 @@ export default {
 ```js
 var {robot} = require('robot-tools');
 var param = { 
-    file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
+	file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
 	vue:  this, //可选, 将本vue对象传递给机器人
-    arguments: {}, //可选, json,传递给机器人的参数。[提示]如果不传递，则系统会默认使用'当时'的vue的data数据
-    onMessage: ()=>{} //回调函数，机器人给VUE发送消息， 感觉快淘汰了
+	arguments: {}, //可选, json,传递给机器人的参数。[提示]如果不传递，则系统会默认使用'当时'的vue的data数据
+	onMessage: ()=>{} //回调函数，机器人给VUE发送消息， 感觉快淘汰了
 }
 //启动机器人
 robot.start(param); 
@@ -548,5 +539,5 @@ var point = findColor(img, "#00ff00", {
 ## QQ群：  1037025652
  
 ```js
-  如果喜欢这个项目，可以请我一包华子 
+  如果喜欢这个项目，可以请赠我一包华子 
 ```
