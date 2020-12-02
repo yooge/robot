@@ -7,91 +7,96 @@
 		<form>
 			<view class="cu-form-group margin-top">
 				<view class="title">点赞概率</view>
-				<input placeholder="-1表示全部" name="input"  v-model="zanMax"></input>
+				<input placeholder="-1表示全部" name="input" v-model="zanMax" />
 			</view>
 			<view class="cu-form-group ">
 				<view class="title">评论内容</view>
-				<input placeholder="{name}几个字" name="input" v-model="comment"></input>
+				<input placeholder="{name}几个字" name="input" v-model="comment" />
 			</view>
 			<view class="cu-form-group ">
 				<view class="title">观看时长</view>
-				<input placeholder="2" name="input"  v-model="interval"></input>(秒/随机)
+				<input placeholder="2" name="input" v-model="interval" />
+				(秒/随机)
 			</view>
 			<view class="cu-form-group ">
 				<view class="title">观看量</view>
-				<input placeholder="100" name="max"  v-model="max"></input>
+				<input placeholder="100" name="max" v-model="max" />
 			</view>
-			 <view class="cu-form-group">
-				Log: {{state.msg}}
-			 </view>
+			<view class="cu-form-group">Log: {{ state.msg }}</view>
 			<view class="cu-form-group">
-				<button class='cu-btn bg-mauve shadow lg' @click="start">在播放页面启动机器人</button>
-				<button class='cu-btn bg-mauve shadow lg' @click="stop">停止</button>
+				<button class="cu-btn bg-mauve shadow lg" @click="start">在播放页面启动机器人</button>
+				<button class="cu-btn bg-mauve shadow lg" @click="stop">停止</button>
 			</view>
-			 <view class="padding flex flex-direction">
-			 	<button class="cu-btn bg-mauve shadow margin-tb-sm lg"  @click="startNow"> 直接启动 </button> 
-			 </view>
-			 
+			<view class="padding flex flex-direction"><button class="cu-btn bg-mauve shadow margin-tb-sm lg" @click="startNow">直接启动</button></view>
+
 			<view class="padding">
-				本页功能的代码: <br>
-			 	[ui]: pages/robots/douyin.vue <br>
+				本页功能的代码:
+				<br />
+				[ui]: pages/robots/douyin.vue
+				<br />
 				[script]: static/robots/robot.douyin.js
 			</view>
-			 
 		</form>
-		 
 	</view>
-	
 </template>
 
 <script>
+var { robot } = require('robot-tools');
 
-	var {robot} = require('robot-tools');
-	
-	export default {
-		data() {
-			return {
-				state: {msg:''},
-				zanMax: 5,
-				comment:'不错哟',
-				interval:2,
-				max:100
+export default {
+	data() {
+		let default_data = {
+			state: { msg: '' },
+			zanMax: 5,
+			comment: '不错哟',
+			interval: 2,
+			max: 100
+		};
+		//读取保存的数据  例子：
+		var saved = uni.getStorageSync('config.douyin');
+		if (saved) {
+			return saved;
+		} else {
+			return default_data;
+		}
+	},
+	updated() {
+		console.log('save config data!!');
+		uni.setStorageSync('config.douyin', this.$data);
+	},
+	methods: {
+		startNow() {
+			var param = {
+				vue: this, //可选,你也可以传别的对象，或者不传。 用来给机器人直接访问的
+				file: 'robot.douyin.js'
+				// arguments: {
+				// 	max: this.max
+				// }  如果传入了VUE，这个参数不传，则会自动使用vue的data数据作为参数
 			};
+			robot.stop();
+			robot.start(param);
 		},
-		methods: {
-			startNow() { 
-				var param = { 
-					vue: this, //可选,你也可以传别的对象，或者不传。 用来给机器人直接访问的
-					file: 'robot.douyin.js',
-					// arguments: {
-					// 	max: this.max	 
-					// }  如果传入了VUE，这个参数不传，则会自动使用vue的data数据作为参数
-				} 
-				robot.stop();
-				robot.start(param); 
-			},
-			start() {  
-				var param = { 
-					file: 'robot.douyin.js',
-					arguments: {
-						max: this.max	 
-					},
-					onMessage:function(res){}
-				}
-				console.log("start At menu");
-				robot.stop();
-				robot.showMenu(param); 
-			},
-			stop() {
-				 robot.stop();
-			} 
+		start() {
+			var param = {
+				file: 'robot.douyin.js',
+				arguments: {
+					max: this.max
+				},
+				onMessage: function(res) {}
+			};
+			console.log('start At menu');
+			robot.stop();
+			robot.showMenu(param);
+		},
+		stop() {
+			robot.stop();
 		}
 	}
+};
 </script>
 
 <style>
-	.cu-form-group .title {
-		min-width: calc(4em + 15px);
-	}
-	 
+.cu-form-group .title {
+	min-width: calc(4em + 15px);
+}
 </style>

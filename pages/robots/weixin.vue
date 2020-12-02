@@ -70,11 +70,12 @@
 				 var param = { 
 					 vue: this, //可选,你也可以传别的对象，或者不传。 用来给机器人直接访问的
 					 file: 'robot.weixin.js',
+					 //file: '/sdcard/demo.js',
+					 //file:'https://yooge.github.io/robot/remote_script.js',
 					 //arguments:{},  //如果传入了vue，则自动会取它的data数据
 					 onMessage:function(res){} 
 				 }
 				 console.log("start"); 
-				 robot.stop();
 				 robot.start(param);
 			},
 			stop() {

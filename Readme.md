@@ -11,13 +11,16 @@
 
 [HTML5plus](http://www.html5plus.org/doc/)：让JS拥有与App一样的能力标准
 
-[N多接口](https://github.com/dcloudio/uni-app/tree/master/docs/api)：增强系统访问功能
+[组件](https://uniapp.dcloud.io/component/README)，[API](https://uniapp.dcloud.io/api/README)，
+[框架](https://uniapp.dcloud.io/collocation/App)：增强手机系统访问功能
 
+[云开发](https://uniapp.dcloud.io/uniCloud/README)，
 [插件社区](https://ext.dcloud.net.cn/), [uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
 
 #### 2. 对AutoJS接口进行了一些增加
-#### 3. 项目自动部署，自动升级，代码加密
+#### 3. 项目自动部署，自动升级，代码加密, 或远程脚本
 #### 4. 无目标APP限制
+#### 5. 有精力的可以使用
 ## QQ群： 1037025652
 
 [效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
@@ -64,7 +67,7 @@
 	<br>推荐大致了解Vue项目结构后进行
 	```
 	项目主体UI：pages/		用于编写前端代码 
-	项目AJ脚本：staic/robots/	用于编写AJ代码
+	项目AJ脚本：static/robots/	用于编写AJ代码
 	```
 
 ## 从UI启动机器人(方案2)
@@ -112,7 +115,7 @@ export default {
 ```js
 var {robot} = require('robot-tools');
 var param = { 
-	file: 'demo.js', //机器人脚本(static/robots/目录下)，也可以是绝对路径/sdcard/xxx.js，或URL
+	file: 'demo.js', //机器人脚本(static/robots/目录下)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
 	vue:  this, //可选, 将本vue对象传递给机器人
 	arguments: {}, //可选, json,传递给机器人的参数。[提示]如果不传递，则系统会默认使用'当时'的vue的data数据
 	onMessage: ()=>{} //回调函数，机器人给VUE发送消息， 感觉快淘汰了
