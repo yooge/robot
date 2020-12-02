@@ -38,11 +38,11 @@
 1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
 	> 推荐下载使用HbuilderX App开发版 进行开发
 2. 克隆或下载源码
-	#### 示例项目(入门推荐) 
+	#### a.示例项目(入门推荐) 
 		此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。
 	  项目地址：[https://github.com/yooge/robot](https://github.com/yooge/robot)
 	
-	###### 空白项目(最小化项目，不含UI交互，高手使用)
+	###### b.空白项目(最小化项目，不含UI交互，高手使用)
 		此方式为一个空白的AJ_VUE示例工程，无任何组件，熟练开发后推荐下载此版本
 	  项目地址：[https://github.com/yooge/autojs-vue-mini](https://github.com/yooge/autojs-vue-mini)
 3. 运行示例项目
