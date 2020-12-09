@@ -25,6 +25,8 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 
+require('./common/auto.js');
+
 const app = new Vue({
 	...App
 })

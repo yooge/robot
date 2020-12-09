@@ -45,7 +45,7 @@ var { robot } = require('robot-tools');
 
 export default {
 	data() {
-		let default_data = {
+		let default_val = {
 			state: { msg: '' },
 			zanMax: 5,
 			comment: '不错哟',
@@ -54,27 +54,25 @@ export default {
 		};
 		//读取保存的数据  例子：
 		var saved = uni.getStorageSync('config.douyin');
-		if (saved) {
-			return saved;
-		} else {
-			return default_data;
-		}
+		//合并数据
+		var new_val = Object.assign(default_val, saved);
+		return new_val;
 	},
 	updated() {
-		console.log('save config data!!');
+		console.log('保存页面上的数据');
 		uni.setStorageSync('config.douyin', this.$data);
 	},
 	methods: {
 		startNow() {
 			var param = {
 				vue: this, //可选,你也可以传别的对象，或者不传。 用来给机器人直接访问的
-				file: 'robot.douyin.js'
-				// arguments: {
-				// 	max: this.max
-				// }  如果传入了VUE，这个参数不传，则会自动使用vue的data数据作为参数
+				file: 'robot.douyin.js', //static/robots目录下， 也可以使用/sdcard/111.js, 或者http://xxxx/11.js
+				arguments: {
+					max: this.max
+				} //如果传入了VUE，这个参数不传，则会自动使用vue的data数据作为参数
 			};
 			robot.stop();
-			robot.start(param);
+			robot.start(param); //直接启动
 		},
 		start() {
 			var param = {
@@ -86,7 +84,7 @@ export default {
 			};
 			console.log('start At menu');
 			robot.stop();
-			robot.showMenu(param);
+			robot.showMenu(param);//从菜单启动
 		},
 		stop() {
 			robot.stop();

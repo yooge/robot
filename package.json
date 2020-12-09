@@ -2,12 +2,12 @@
   "scripts": {
     "1.初始化/依赖包": "npm install",
     "2.更新/安装调试的apk": "robot-tools init",
-    "3.加密/打包/热补丁": "robot-tools deploy"
+    "3.加密/热补丁/打APK包": "robot-tools deploy"
   },
   "dependencies": {
+    "robot-tools": "^1.1.0",
     "compressing": "^1.5.1",
     "request": "^2.88.2",
-    "robot-tools": "^1.0.24",
     "webpack": "^5.4.0"
   }
 }
