@@ -80,8 +80,10 @@ export default {
 			console.log('exec test'); 
 			robot.exec(function(){
 				console.log("xxxx");
+				console.log('imei: '+device.getIMEI()); //autojs里面的函数
 				//auto();
-				launchApp('抖音');
+				//launchApp('抖音');
+				
 			}); 
 		},
 		start() {

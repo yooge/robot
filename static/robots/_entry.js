@@ -1,7 +1,10 @@
+//【重要】 本文件为系统入口文件，请问轻易修改
+
 var fname = app.args._entry;
 var path = './' + fname + '.js';
 
 console.log('>>>>');
+
 if (fname == '_blank') {
 	console.log('_blank'); 
 	setTimeout(() => {

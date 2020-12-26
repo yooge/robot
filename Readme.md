@@ -147,6 +147,7 @@ autojs.start(param);
 //在当前环境中立即执行autojs脚本
 autojs.exec(function(){ 
     //在vue的代码文件里，直接执行机器人代码，
+   console.log(device.getIMEI());
    launchApp('抖音');
    //click('朋友圈');
 });
