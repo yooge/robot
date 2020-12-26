@@ -1,8 +1,15 @@
-//这个为机器人脚本保留入口， 不建议修改
-// app.args; vue发过来的参数 
-
 var fname = app.args._entry;
+var path = './' + fname + '.js';
+
 console.log('>>>>');
-if (fname) {
+if (fname == '_blank') {
+	console.log('_blank'); 
+	setTimeout(() => {
+		console.log('_blank done!');
+	}, 60 * 60 * 1000);
+
+} else if (!files.exists(path)) {
+	console.log('文件找不到: ' + path);
+} else if (fname) {
 	require('./' + fname + '.js');
 }

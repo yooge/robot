@@ -5,7 +5,7 @@
     "3.加密/热补丁/打APK包": "robot-tools deploy"
   },
   "dependencies": {
-    "robot-tools": "^1.1.0",
+    "robot-tools": "^1.1.4",
     "compressing": "^1.5.1",
     "request": "^2.88.2",
     "webpack": "^5.4.0"

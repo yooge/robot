@@ -36,7 +36,7 @@
 <img src='http://robots.vnool.com:81/static/git/5.jpg' width="300">
  
 
-### 运行项目
+## 开发环境
 1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
 	> 推荐下载使用HbuilderX App开发版 进行开发
 2. 克隆或下载源码
@@ -51,14 +51,14 @@
 	###### b.空白项目(最小化项目，不含UI交互，高手使用)
 		此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用
 	    项目地址：请github搜索 autojs-vue-mini
-3. 运行示例项目
-	1. 初始化项目文件
+## 运行示例项目
+####	 1. 初始化项目文件
 		>  1. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 1.初始化/依赖包
 		>  2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 2.更新/安装基座
-	2. 配置运行基座
+####	2. 配置调试基座(手机上的app)
 		<br>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在
 		>  HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座
-	3. 执行 (调试/运行)
+####	3. 执行 (调试/运行)
 		###### 运行到手机 
 		>  1. 连接手机(需ADB生效) 
 		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择你的手机名字
@@ -67,7 +67,7 @@
 		>  1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
 		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
 	
-	4. 发布/升级，生成APK
+## 发布/升级，生成APK
 		>  1. HbuilderX开发工具顶部 -> 发行 -> 本地打包 -> 生成app资源
 		>  2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 发布
 		```
@@ -75,15 +75,15 @@
 		热更新id：manifest.json文件中:appid
 		app图标：static/logo.png
 		```
-4. 开始编码
-	<br>推荐大致了解Vue项目结构后进行
+# UI与autojs的交互
+	<br>建议先大致了解Vue项目结构后进行
 	```
 	项目主体UI：pages/   各种UI样式举例
 	项目主体UI：pages/robots/		2个启动界面举例 
 	项目AJ脚本：static/robots/	(默认)用于存放AutoJs代码
 	```
 
-## 从UI启动autojs机器人(举例)
+## 从UI启动autojs脚本(举例)
 #### 不想看例子的人，请直接看这两个路径的源码
 ```
 pages/robots/
@@ -94,7 +94,7 @@ static/robots/
 launchApp("微信"); 
 click("发现"); 
 click("朋友圈");
-desc("评论").find()[0].click();
+desc("评论").findOne().click();
 click("赞");
 ```
  
@@ -113,7 +113,7 @@ export default {
     methods: {
         test() {
             var param = {
-                file: 'demo.js', //static/robots/demo.js 
+                file: 'demo.js', //文件路径为./static/robots/demo.js 
             }
             autojs.stop();
             autojs.start(param);
@@ -122,9 +122,9 @@ export default {
 }
 </script>
 ```
-#### 【第3步】. 在Hbuilder中启动，菜单
-`运行/手机或模拟器/选择你的手机`
-(此时手机上会自动安装running这个app)，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
+#### 【第3步】. 在Hbuilder中启动，
+菜单：`运行/手机或模拟器/选择你的手机`
+(此时手机上会自动安装调试app)，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
 
 .
 .
@@ -136,18 +136,22 @@ var param = {
 	file: 'demo.js', //机器人脚本(static/robots/目录下)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
 	vue:  this, //可选, 将本vue对象传递给机器人
 	arguments: {}, //可选, json,传递给机器人的参数。[提示]如果不传递，则系统会默认使用'当时'的vue的data数据
-	onMessage: ()=>{} //回调函数，机器人给VUE发送消息， 感觉快淘汰了
+	onMessage: (data)=>{}, //回调函数，机器人给VUE发送消息， 感觉快淘汰了
+	start: ()=>{}, //脚本启动事件
+	finish: (obj)=>{},//脚本执行完毕事件
+	fail: (msg)=>{},//脚本发生意外事件
 }
 //启动机器人
 autojs.start(param); 
 
-/* 立即执行 (淘汰中)
+//在当前环境中立即执行autojs脚本
 autojs.exec(function(){ 
-  ////在vue的代码文件里，直接执行机器人代码，
-  //click('朋友圈');
-})
-*/
+    //在vue的代码文件里，直接执行机器人代码，
+   launchApp('抖音');
+   //click('朋友圈');
+});
 
+//停止脚本
 autojs.stop();
 ```
 #### autojs机器人获取VUE发过来的参数(启动机器人时传递的)

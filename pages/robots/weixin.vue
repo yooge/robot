@@ -55,14 +55,14 @@ export default {
 		data() {
 			return {
 				state: {msg:''},
-				zanMax: '100%',
+				zanMax: '20',
 				comment:'不错哟',
 				interval:2,
 				max:100
 			};
 		},
 		methods: {
-			start() {
+			start(){
 				  autojs('robot.weixin.js');  //更多解释，请看douyin.vue
 			},
 			stop() {

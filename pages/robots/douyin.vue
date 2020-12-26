@@ -7,7 +7,7 @@
 		<form>
 			<view class="cu-form-group margin-top">
 				<view class="title">点赞概率</view>
-				<input placeholder="-1表示全部" name="input" v-model="zanMax" />
+				1/<input placeholder="请输入框点赞率" name="input" v-model="zanMax" />
 			</view>
 			<view class="cu-form-group ">
 				<view class="title">评论内容</view>
@@ -24,8 +24,9 @@
 			</view>
 			<view class="cu-form-group">Log: {{ state.msg }}</view>
 			<view class="cu-form-group">
-				<button class="cu-btn bg-mauve shadow lg" @click="start">在播放页面启动机器人</button>
+				<button class="cu-btn bg-cyan shadow lg" @click="start">在播放页面启动机器人</button>
 				<button class="cu-btn bg-mauve shadow lg" @click="stop">停止</button>
+				<button class="cu-btn bg-mauve shadow lg" @click="exec">exec</button>
 			</view>
 			<view class="padding flex flex-direction"><button class="cu-btn bg-mauve shadow margin-tb-sm lg" @click="startNow">直接启动</button></view>
 
@@ -73,6 +74,15 @@ export default {
 			};
 			robot.stop();
 			robot.start(param); //直接启动
+			//autojs(param); //直接启动
+		},
+		exec() { 
+			console.log('exec test'); 
+			robot.exec(function(){
+				console.log("xxxx");
+				//auto();
+				launchApp('抖音');
+			}); 
 		},
 		start() {
 			var param = {
@@ -85,6 +95,7 @@ export default {
 			console.log('start At menu');
 			robot.stop();
 			robot.showMenu(param);//从菜单启动
+			robot.moveMenu(100,100); //移动菜单到坐标
 		},
 		stop() {
 			robot.stop();
