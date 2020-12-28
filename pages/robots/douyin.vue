@@ -83,6 +83,8 @@ export default {
 				console.log('imei: '+device.getIMEI()); //autojs里面的函数
 				//auto();
 				//launchApp('抖音');
+				var x = back2activityEx("停止 | *启动");
+				console.log(x);
 				
 			}); 
 		},
