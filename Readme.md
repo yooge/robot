@@ -447,6 +447,7 @@ console.toast('修改标题内容');
 toast('修改标题内容');
 console.msg('修改日志内容/覆盖');
 console.log('日志');
+console.log('<b>日志</b>'); //内容可使用HTML
 console.info('蓝色提示');
 console.warn('黄色警告');
 console.verbose('低级日志');
