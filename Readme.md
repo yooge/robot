@@ -436,6 +436,7 @@ sleep(1000);//暂停1秒
 //
 console.log("xxxxx"); //会同时打印到电脑,手机
 console.show();  //打开悬浮日志窗口(日志同时会往这里输出)
+//---
 //
 console.useNew(); //使用新的模式!!(使下面的这些功能)
 console.useNew('patchs/log_layout.xml'); //指定layout
@@ -445,6 +446,18 @@ console.title('修改标题内容');
 console.toast('修改标题内容');
 toast('修改标题内容');
 console.msg('修改日志内容/覆盖');
+console.log('日志');
+console.info('蓝色提示');
+console.warn('黄色警告');
+console.verbose('低级日志');
+console.error('红色警告');
+console.red = 'red';  //设置颜色
+console.red = '#e00';
+console.yellow = 'yellow';
+console.blue = 'blue';
+console.gray = 'gray';
+//设置日志本地存储
+console.logfile = '/sdcard/1.txt';
 
 console.resize(400, 400);  //设置日志浮窗 宽度，高度
 console.resize(-1, 400);  //宽度为全屏
@@ -455,6 +468,9 @@ console.window 浮窗对象
 console.window.resize(400, 400)
 console.window.title.setText('hello') //设置文字
 console.window.myid.setTextSize(20) //设置字体大小（请在自定义layout中加入这个myid节点）
+
+console.setText(console.window.body, '<b>粗体文字</b>'); //添加html文字
+console.addText(console.window.myid, '<font color=red>红色文字</font>'); //添加html文字
 ```
 
 
