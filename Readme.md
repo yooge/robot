@@ -15,8 +15,9 @@
 [组件](https://uniapp.dcloud.io/component/README)，[API](https://uniapp.dcloud.io/api/README)，
 [框架](https://uniapp.dcloud.io/collocation/App)：增强APP的手机系统访问功能
 
+[插件社区](https://ext.dcloud.net.cn/)，
 [云开发](https://uniapp.dcloud.io/uniCloud/README)，
-[插件社区](https://ext.dcloud.net.cn/)，[uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
+[uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
 
 #### 2. 对AutoJS接口进行了一些增加
 #### 3. 项目自动部署，自动升级，代码加密, 或远程脚本
@@ -66,6 +67,7 @@
 		###### 运行到模拟器
 		>  1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
 		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
+		>  建议 雷电，夜游神，或安卓8以上的
 	
 ## 发布/升级，生成APK
 		>  1. HbuilderX开发工具顶部 -> 发行 -> 本地打包 -> 生成app资源
@@ -437,15 +439,15 @@ sleep(1000);//暂停1秒
 console.log("xxxxx"); //会同时打印到电脑,手机
 console.show();  //打开悬浮日志窗口(日志同时会往这里输出)
 //---
-//
-console.useNew(); //使用新的模式!!(使下面的这些功能)
+//用新的控制台
+console.useNew(); //使用新的模式!!(使下面的这些功能)，老控制台则用这个访问console_old
 console.useNew('patchs/log_layout.xml'); //指定layout
 console.log2ide("xxxx"); //仅仅显示在电脑里
 console.log2app("xxxx");  //仅仅显示在手机上
 console.title('修改标题内容');
 console.toast('修改标题内容');
 toast('修改标题内容');
-console.msg('修改日志内容/覆盖');
+console.msg('覆盖日志区域内容');//内容可使用HTML，可作为自定义统计页
 console.log('日志');
 console.log('<b>日志</b>'); //内容可使用HTML
 console.info('蓝色提示');
@@ -454,6 +456,7 @@ console.verbose('低级日志');
 console.error('红色警告');
 console.red = 'red';  //设置颜色
 console.red = '#e00';
+console.red = '#ee0000';
 console.yellow = 'yellow';
 console.blue = 'blue';
 console.gray = 'gray';
