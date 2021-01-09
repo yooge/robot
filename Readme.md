@@ -447,6 +447,7 @@ console.log2app("xxxx");  //仅仅显示在手机上
 console.title('修改标题内容');
 console.toast('修改标题内容');
 toast('修改标题内容');
+
 console.msg('覆盖日志区域内容');//内容可使用HTML，可作为自定义统计页
 console.log('日志');
 console.log('<b>日志</b>'); //内容可使用HTML
@@ -454,12 +455,14 @@ console.info('蓝色提示');
 console.warn('黄色警告');
 console.verbose('低级日志');
 console.error('红色警告');
-console.red = 'red';  //设置颜色
-console.red = '#e00';
-console.red = '#ee0000';
-console.yellow = 'yellow';
-console.blue = 'blue';
-console.gray = 'gray';
+
+console.error.color = '#DD0099';//设置颜色
+console.error.color = 'red';//设置颜色
+console.info.color = 'blue';
+console.warn.color = 'yellow';
+console.log.color = 'white';
+console.verbose.color = 'gray';
+ 
 //设置日志本地存储
 console.logfile = '/sdcard/1.txt';
 
