@@ -24,7 +24,7 @@
 #### 4. 无目标APP限制
 ###### 5. 可一键转微信小程序,支付宝小程序等(但不支持autojs)
 #### 
-## QQ群： 1037025652
+## QQ群： 868229959
 
 [效果图1](http://robots.vnool.com:81/static/git/1.jpg)，
 [效果图2](http://robots.vnool.com:81/static/git/3.jpg)，
@@ -587,7 +587,7 @@ var point = findColor(img, "#00ff00", {
 .
 
  
-## QQ群：  1037025652
+## QQ群：  868229959
  
 ```js
   如果喜欢这个项目，可以请赠我一包华子 
