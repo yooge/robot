@@ -38,63 +38,78 @@
  
 
 ## 开发环境
-1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
-	> 推荐下载使用HbuilderX App开发版 进行开发
-2. 克隆或下载源码
-	#### a.示例项目(入门推荐) 
-		此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。
-	  github地址(github)：[https://github.com/yooge/robot](https://github.com/yooge/robot)
+### 1. 下载安装开发工具[HbuilderX](https://www.dcloud.io/hbuilderx.html)
+推荐下载使用`HbuilderX App开发版` 进行开发
+
+### 2. 克隆或下载源码
+
+#### a.示例项目(入门推荐) 
+此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。
+github地址(github)：[https://github.com/yooge/robot](https://github.com/yooge/robot)
 	  
-	  gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/vnool/autojs-vue)
+gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/vnool/autojs-vue)
 	
-	  直接下载zip包：
+直接下载zip包：
 	  
-	###### b.空白项目(最小化项目，不含UI交互，高手使用)
-		此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用
-	    项目地址：请github搜索 autojs-vue-mini
+#### b.空白项目(最小化项目，不含UI交互，高手使用)
+ 
+  此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用
+项目地址：请github搜索 autojs-vue-mini
+
 ## 运行示例项目
-####	 1. 初始化项目文件
-		>  1. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 1.初始化/依赖包
-		>  2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 2.更新/安装基座
-####	2. 配置调试基座(手机上的app)
-		>  HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座
-		<br>如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在
-####	3. 执行 (调试/运行)
-		###### 运行到手机 
-		>  1. 连接手机(需ADB生效) 
-		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择你的手机名字
+#### 1. 初始化项目文件
+
+###### `[步骤1]`1. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 1.初始化/依赖包
+###### `[步骤2]`2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 2.更新/安装基座
+
+        
+#### 2. 配置调试基座(手机上的app)
+###### `[步骤3]` HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 运行基座选择 -> 自定义基座
+
+* 如果忘记勾选，会意外安装错误的手机程序，会提示Robot对象不存在
+
+#### 3. 执行 (调试/运行)
+###### `[步骤4]`3.1. 运行到手机 
+###### 1. 连接手机(需ADB生效) 
+###### 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择你的手机名字
 		
-		###### 运行到模拟器
-		>  1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
-		>  2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
-		>  建议用真机， 雷电，夜游神，或安卓8以上的
+###### 3.2. 运行到模拟器
+   > 1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
+   > 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
+   > 建议用真机， 雷电，夜游神，或安卓8以上的
 	
+    
 ## 发布/升级，生成APK
-		>  1. HbuilderX开发工具顶部 -> 发行 -> 本地打包 -> 生成app资源
-		>  2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 生成APK
-		>  
-	    #### 自定义manifest.json文件
-		``` 
-		"name" : "app名称",
-		"appid" : "__UNI__xxxx", /* 一定要改!!!!! */
-		"appkey" : "去官方申请962a0c8a982ae去官方申请",
-		/* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
-		"package" : "com.xxxx.yyy", 
-		"SHA1" : "BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88", /* 固定值 */
-		"logo" : "static/logo.png", /* APP图标 */
-		"splash" : "static/splash.png", /* 开屏等待页广告 */
-		
-		"versionName" : "1.0.37", /* 热补丁之前修改*/
-		"versionCode" : 10037,   /* 在做热补丁之前修改*/
-		
-		```
-# UI与autojs的交互
-	<br>建议先大致了解Vue项目结构后进行
-	```
-	项目主体UI：pages/   各种UI样式举例(可忽略)
-	项目主体UI：pages/robots/		2个启动界面举例 
-	项目AJ脚本：static/robots/	(默认)用于存放AutoJs代码
-	```
+###### `[步骤]`1. HbuilderX开发工具顶部 -> 发行 -> 本地打包 -> 生成app资源
+###### `[步骤]`2. HbuilderX开发工具顶部 -> 运行 -> 运行到终端 -> 生成APK
+
+
+#### 自定义manifest.json文件
+```js
+{		
+	"name" : "app名称",
+	"appid" : "__UNI__xxxx", /* 一定要改!!!!! */
+	"appkey" : "去官方申请962a0c8a982ae去官方申请",
+	/* appkey去官方申请： https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey */
+	"package" : "com.xxxx.yyy", 
+	"SHA1" : "BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88", /* 固定值 */
+	"logo" : "static/logo.png", /* APP图标 */
+	"splash" : "static/splash.png", /* 开屏等待页广告 */
+
+	"versionName" : "1.0.37", /* 热补丁之前修改*/
+	"versionCode" : 10037,   /* 在做热补丁之前修改*/		
+}
+```
+
+# vue与autojs的交互
+
+建议先大致了解Vue项目结构后进行
+
+
+* 项目主体UI：pages/   各种UI样式举例(可忽略)
+* 项目主体UI：pages/robots/		2个启动界面举例 
+* 项目AJ脚本：static/robots/	(默认)用于存放AutoJs代码
+
 
 ## 从UI启动autojs脚本(举例)
 #### 不想看例子的人，请直接看这两个路径的源码
@@ -135,13 +150,17 @@ export default {
 }
 </script>
 ```
-#### 【第3步】. 从Hbuilder中启动app，
-菜单：`运行/手机或模拟器/选择你的手机`
-(此时手机上会自动安装调试app)，APP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
+#### 【第3步】 从Hbuilder中启动app，
 
+```
+菜单：运行/手机或模拟器/选择你的手机
+```
+```
+(此时手机上会自动安装调试app)，
+APP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从后台启动”
+```
 .
-.
-.
+
 ## 参数解释
 ```js
 var {autojs} = require('robot-tools');
@@ -194,10 +213,10 @@ autojs.exec(function(){
 
 //立即执行autojs脚本（代码可以是字符串）
 autojs.exec(
-` 
+ `` 
    console.log(device.getIMEI());
    launchApp('抖音'); 
-`
+ ``
 );
 
 
