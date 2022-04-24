@@ -21,8 +21,7 @@
 
 #### 2. 对AutoJS接口进行了一些增加
 #### 3. 项目自动部署，自动升级，代码加密, 或远程脚本
-#### 4. 无目标APP限制
-###### 5. 可一键转微信小程序,支付宝小程序等(但不支持autojs)
+#### 4. 无目标APP限制 
 #### 
 ## QQ群： 868229959
 
@@ -45,6 +44,7 @@
 
 #### a.示例项目(入门推荐) 
 此方式为整个AJ_VUE演示项目，里面有Color UI组件库，演示，模板等，建议用户可以下载 此项目运行用于查看演示效果，通过里面的示例，可以快速掌握项目用法。
+
 github地址(github)：[https://github.com/yooge/robot](https://github.com/yooge/robot)
 	  
 gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/vnool/autojs-vue)
@@ -74,9 +74,9 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 ###### 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择你的手机名字
 		
 ###### 3.2. 运行到模拟器
-   > 1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
-   > 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
-   > 建议用真机， 雷电，夜游神，或安卓8以上的
+ 1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
+ 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
+ 建议用真机， 雷电，夜游神，或安卓8以上的
 	
     
 ## 发布/升级，生成APK
@@ -105,11 +105,11 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 
 建议先大致了解Vue项目结构后进行
 
-
+```
 * 项目主体UI：pages/   各种UI样式举例(可忽略)
 * 项目主体UI：pages/robots/		2个启动界面举例 
 * 项目AJ脚本：static/robots/	(默认)用于存放AutoJs代码
-
+```
 
 ## 从UI启动autojs脚本(举例)
 #### 不想看例子的人，请直接看这两个路径的源码
@@ -174,7 +174,11 @@ var param = {
 	fail: (msg)=>{},//脚本发生意外事件
 }
 /*
-arguments  可以在autojs脚本中用app.args获取
+file:  //机器人脚本(static/robots/目录下)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
+arguments: //可选, json,传递给机器人的参数。
+//可以在autojs脚本中用app.args获取
+//如果不传递参数，则系统会默认传递'当时'的vue的$data数据；
+//如果autojs想动态获取vue的$data的数据，请往下看
 */
 
 //启动脚本
@@ -213,10 +217,10 @@ autojs.exec(function(){
 
 //立即执行autojs脚本（代码可以是字符串）
 autojs.exec(
- `` 
+ `
    console.log(device.getIMEI());
    launchApp('抖音'); 
- ``
+ `
 );
 
 
@@ -229,7 +233,7 @@ app.args //json对象,
 app.arguments  //参数字符串
 
 app.args.scriptStartFrom //null 或 'menu'； 可以通过不同的启动方式，执行不同的代码
-
+app.args._debug //调试模式，还是正式模式
 ```
 #### autojs机器人给VUE层发消息
 ```js
@@ -242,7 +246,7 @@ app.post2host("hello vue");
 app.vue  //autojs直接访问vue的对象，上面传递进来的对象this(或别的对象)
 app.vue.abc   //访问data里的abc变量
 app.vue.abc = 999; //给data里面的abc赋值
-app.vue.test() //访问methods里面的 test函数。 此用法可以淘汰上面的onMessage回调
+app.vue.test() //访问VUE的methods里面的test函数。 此用法可以淘汰上面的onMessage回调
 
 ```
 #### 例index.vue
