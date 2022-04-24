@@ -175,7 +175,11 @@ autojs.exec(function(){
     launchApp('抖音');
    //click('朋友圈');
 });
-//如果需要用require方法引用其他的js文件，请先用init设置工作路径
+//偶尔用一下，不要太依赖
+//todo:
+//1. 作用域在autojs内，此处暂不支持对VUE的访问，下一版补上；(如果需要访问VUE，看下面的start方法)
+//2. 如果需要用require方法引用其他的js文件，请先用autojs.robot.setJsDir("/sdcard/")设置工作路径；
+//   或者用autojs.init({file:'demo.js'})设置个假的文件，工作路径参考下文
 ```
 #### 执行autojs文件
 ```js
@@ -190,8 +194,14 @@ var param = {
 	fail: (msg)=>{},//可选,脚本发生意外事件
 }
 /*
-file:  //机器人脚本(static/robots/目录下)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
-arguments: //可选, json,传递给机器人的参数。
+
+file:  
+//1. 机器人脚本(static/robots/目录下的demo.js)，
+//2. 或绝对路径/sdcard/xxx.js，
+//3. 或远程URL(也可以用发布的打包加密代码)
+
+arguments: 
+//可选, json,传递给机器人的参数。
 //可以在autojs脚本中用app.args获取
 //如果不传递参数，则系统会默认传递'当时'的vue的$data数据；
 //如果autojs想动态获取vue的$data的数据，请往下看
@@ -222,7 +232,6 @@ autojs.eval(function(){
    console.log(text('我'));
    //click('朋友圈');
 });
-
 
 
 
