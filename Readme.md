@@ -162,16 +162,32 @@ APP启动后，请为这个app授权”无障碍“，”悬浮窗“，”从�
 .
 
 ## 参数解释
+#### 在VUE页面，立即执行autojs代码
+```js
+var {autojs} = require('robot-tools');
+
+//立即执行autojs脚本（无需js文件或执行js脚本，可立即执行本代码）
+autojs.exec(function(){ 
+    //在vue的代码文件里，直接执行机器人代码，
+    console.log('开始振动 ');
+	console.show();
+	device.vibrate(2000);
+    launchApp('抖音');
+   //click('朋友圈');
+});
+//如果需要用require方法引用其他的js文件，请先用init设置工作路径
+```
+#### 执行autojs文件
 ```js
 var {autojs} = require('robot-tools');
 var param = { 
-	file: 'demo.js', //机器人脚本(static/robots/目录下)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
+	file: 'demo.js', //[必选],机器人脚本(static/robots/demo.js)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
 	vue:  this, //可选, 将本vue对象传递给机器人
 	arguments: {}, //可选, json,传递给机器人的参数。[提示]如果不传递，则系统会默认使用'当时'的vue的data数据；
-	onMessage: (data)=>{}, //回调函数，机器人给VUE发送消息， 感觉快淘汰了
-	start: ()=>{}, //脚本启动事件
-	finish: (obj)=>{},//脚本执行完毕事件
-	fail: (msg)=>{},//脚本发生意外事件
+	onMessage: (data)=>{}, //可选,回调函数，机器人给VUE发送消息， 感觉快淘汰了
+	start: ()=>{}, //可选,脚本启动事件
+	finish: (obj)=>{},//可选,脚本执行完毕事件
+	fail: (msg)=>{},//可选,脚本发生意外事件
 }
 /*
 file:  //机器人脚本(static/robots/目录下)，或绝对路径/sdcard/xxx.js，或远程URL(也可以用发布的打包加密代码)
@@ -201,18 +217,13 @@ autojs.showMenu(param); //执行脚本并显示机器人图标
 //在当前运行的环境中立即执行autojs脚本(需要在xxx.js脚本启动后，再调用该方法)
 autojs.eval(function(){ 
     //在vue的代码文件里，直接执行机器人代码，
-   console.log(device.getIMEI());
    launchApp('抖音');
+   sleep(4000);
+   console.log(text('我'));
    //click('朋友圈');
 });
 
-//立即执行autojs脚本（无需js文件或执行js脚本，可立即执行本代码）
-autojs.exec(function(){ 
-    //在vue的代码文件里，直接执行机器人代码，
-   console.log(device.getIMEI());
-   launchApp('抖音');
-   //click('朋友圈');
-});
+
 
 
 //立即执行autojs脚本（代码可以是字符串）
