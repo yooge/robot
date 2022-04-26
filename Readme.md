@@ -1,9 +1,10 @@
  
 # AutoJs-Vue 特性
 
-## 帮助开发者,快速生产友好的AutoJS程序
+## 用JS任意控制手机上的其他APP
+##### 帮助开发者,快速生产友好的AutoJS程序
 ## 
-#### 1. 全面支持(信息量很大):  
+#### 1. 全面支持 (信息量很大，请扫一眼即可，厉害了再回来看):  
 [AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/)：全接口支持
 
 [VUE](https://cn.vuejs.org/)：著名的渐进式JavaScript框架(傻瓜->高手),
@@ -13,7 +14,7 @@
 [HTML5plus](http://www.html5plus.org/doc/)：让JS拥有与App一样的能力标准
 
 [组件](https://uniapp.dcloud.io/component/README)，[API](https://uniapp.dcloud.io/api/README)，
-[框架](https://uniapp.dcloud.io/collocation/App)：增强APP的手机系统访问功能
+[框架](https://uniapp.dcloud.io/collocation/App)：各种第三方的APP原生能力
 
 [插件社区](https://ext.dcloud.net.cn/)，
 [云开发](https://uniapp.dcloud.io/uniCloud/README)，
@@ -23,7 +24,7 @@
 #### 3. 项目自动部署，自动升级，代码加密, 或远程脚本
 #### 4. 无目标APP限制 
 #### 
-## QQ群： 868229959
+## QQ群： 820320773
 
 [效果图1](http://robots.shen-x.com/static/git/1.jpg)，
 [效果图2](http://robots.shen-x.com/static/git/3.jpg)，
