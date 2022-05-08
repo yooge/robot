@@ -1,40 +1,37 @@
- 
-# AutoJs-Vue 特性
+## 1. 用JS任意控制手机上的其他APP
+#### (10分钟就可以上手)
+``` 
+(10分钟就可以上手)
+```
+## AutoJs-Vue 特性
 
-## 用JS任意控制手机上的其他APP
 ##### 帮助开发者,快速生产友好的AutoJS程序
 ## 
-#### 1. 全面支持 (信息量很大，请扫一眼即可，厉害了再回来看):  
-[AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/)：全接口支持
-
-[VUE](https://cn.vuejs.org/)：著名的渐进式JavaScript框架(傻瓜->高手),
-
-[color-Ui](http://demo.color-ui.com/)：优雅的前端视觉交互设计(默认内置，也可以换成其他UI框架)
-
-[HTML5plus](http://www.html5plus.org/doc/)：让JS拥有与App一样的能力标准
-
-[组件](https://uniapp.dcloud.io/component/README)，[API](https://uniapp.dcloud.io/api/README)，
-[框架](https://uniapp.dcloud.io/collocation/App)：各种第三方的APP原生能力
-
-[插件社区](https://ext.dcloud.net.cn/)，
-[云开发](https://uniapp.dcloud.io/uniCloud/README)，
-[uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
-
-#### 2. 对AutoJS接口进行了一些增加
-#### 3. 项目自动部署，自动升级，代码加密, 或远程脚本
+#### 1. 全面支持 uni 与 aj 的生态 (信息量很大):  
+#### 2. 代码加密,
+#### 3. 项目自动部署，自动升级，或远程脚本
 #### 4. 无目标APP限制 
+#### 5. 集成了流行的UI界面
 #### 
 ## QQ群： 820320773
 
+#### 1. 对app的控制(10分钟就可以上手)
+```js
+launchApp("微信"); 
+click("发现");
+click("朋友圈");
+sleep(3000);
+click(desc("评论"));
+```
 [效果图1](http://robots.shen-x.com/static/git/1.jpg)，
 [效果图2](http://robots.shen-x.com/static/git/3.jpg)，
 [效果图3](http://robots.shen-x.com/static/git/6.jpg)，
 [效果图4](http://robots.shen-x.com/static/git/5.jpg)，
 
 <img src='http://robots.shen-x.com/static/git/1.jpg'>
-<img src='http://robots.shen-x.com/static/git/1.jpg' width="300">
-<img src='http://robots.shen-x.com/static/git/6.jpg' width="300">
-<img src='http://robots.shen-x.com/static/git/5.jpg' width="300">
+<img src='http://robots.shen-x.com/static/git/9.png' width="300">
+<img src='http://robots.shen-x.com/static/git/3.jpg' width="300">
+<img src='http://robots.shen-x.com/static/git/8.png' width="300">
  
 
 ## 开发环境
@@ -56,7 +53,10 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
  
   此连接为一个空白的AJ_VUE示例工程，无任何ui组件，熟练开发后使用
 项目地址：请github搜索 autojs-vue-mini
+# 快速开始：
+# 点这里>>>[快速开始](https://github.com/yooge/robot/wiki/now-start)
 
+.
 ## 运行示例项目
 #### 1. 初始化项目文件
 
@@ -71,13 +71,11 @@ gitee地址[网速快]：[https://gitee.com/vnool/autojs-vue](https://gitee.com/
 
 #### 3. 执行 (调试/运行)
 ###### `[步骤4]`3.1. 运行到手机 
-###### 1. 连接手机(需ADB生效) 
+###### 1. USB线连接手机(需ADB生效) 
 ###### 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择你的手机名字
 		
-###### 3.2. 运行到模拟器
- 1. HbuilderX开发工具顶部 -> 工具 -> 设置 -> 运行配置 -> 模拟器端口
- 2. HbuilderX开发工具顶部 -> 运行 -> 手机或模拟器 -> 选择模拟器名字
- 建议用真机， 雷电，夜游神，或安卓8以上的
+运行到模拟器，wifi连接 (另外聊)
+
 	
     
 ## 发布/升级，生成APK
@@ -770,3 +768,21 @@ var point = findColor(img, "#00ff00", {
 ```js
   如果喜欢这个项目，可以请赠我一包华子 
 ```
+
+
+
+#### 其他链接
+[AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/)：全接口支持
+
+[VUE](https://cn.vuejs.org/)：著名的渐进式JavaScript框架(傻瓜->高手),
+
+[color-Ui](http://demo.color-ui.com/)：优雅的前端视觉交互设计(默认内置，也可以换成其他UI框架)
+
+[HTML5plus](http://www.html5plus.org/doc/)：让JS拥有与App一样的能力标准
+
+[组件](https://uniapp.dcloud.io/component/README)，[API](https://uniapp.dcloud.io/api/README)，
+[框架](https://uniapp.dcloud.io/collocation/App)：各种第三方的APP原生能力
+
+[插件社区](https://ext.dcloud.net.cn/)，
+[云开发](https://uniapp.dcloud.io/uniCloud/README)，
+[uni开发者社群](https://dcloud.io/), 开发者600万+， 12亿手机端月活用户
