@@ -21,6 +21,8 @@
 					</view>
 				</view>
 				<button v-if="!userInfo" class="cu-btn bg-white shadow margin-left"  @click="login">点击登录</button>
+				<button class="cu-btn bg-white shadow margin-left"  @click="alilogin">ALi登录</button>
+				
 			</view>
 
 			<!-- 中间部分 -->

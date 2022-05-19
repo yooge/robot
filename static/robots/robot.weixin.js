@@ -1,6 +1,7 @@
 auto();
 //觉得碍眼，就注释掉这几行。（悬浮半透明日志窗口） 
 console.useNew();
+//console.useNew('patchs/log_layout.xml');
 console.show(); //日志输出到屏幕
 console.title('任务：朋友圈骚扰');
 

@@ -6,7 +6,7 @@
 			<view class="nav-list">
 				<navigator hover-class="none" url="/pages/robots/weixin" class="nav-li bg-green" navigateTo
 				 :style="[{animation: 'show 1.2s 1'}]"   >
-					<view class="nav-title">微信(test)</view>
+					<view class="nav-title">微信(easy)</view>
 					<view class="nav-name">刷朋友圈</view>
 					<text class='cuIcon-weixin'></text>
 				</navigator> 

@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import App from './App'
 
-import crm from './pages/crm/home.vue'
-Vue.component('crm', crm)
-
 import my from './pages/my/my.vue'
 Vue.component('my', my)
 
@@ -25,7 +22,7 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 
-require('./common/auto.js');
+require('./auto.js');
 
 const app = new Vue({
 	...App

@@ -139,6 +139,64 @@ var methods = {
 		this.listTouchDirection = null
 	}
 };
+
+	const aLiSDKModule = uni.requireNativePlugin('AliCloud-NirvanaPns')
+methods.alilogin  =function(){
+	var key = "eQSoQl9x0dIS2twLRh1pwapLer/t1uuhpCZ9moJce763hMyNET2qMZ2bLRv4FVbrsOIJU8GHFtU00SjzM0teB70Bv41P23WWSWpM4OpJcT+D7HldeerFm594gKFxun22+jXRG3pbZdGoSTJR2Vp7kYcYVv2bTW/5wSl0RpVm5khGoEYp+8ohyY2S2h74h6FQ640xSSiJ6MJqVEMQGj/w4bj9gtbHGEvf8e+jHXw0Rduqc/2626LvMm1ikZMFqE/SAKkn5KXMOLtY18Gy4O/8a3GkUjKZlcNyOFHqMbLj8tQg9gccPMcrzBCEoQQsPdA2";
+
+	console.log("aLiSDKModule info --》: ");
+	//console.log(aLiSDKModule);
+	aLiSDKModule.setAuthSDKInfo(key);
+	aLiSDKModule.accelerateLoginPage(5000, result => {
+	    if ("600000" == result.resultCode) {
+	        console.log("加速成功")
+	    }
+	});
+	
+	setTimeout(alicall, 1000);
+	
+}
+
+function alicall(){
+	aLiSDKModule.getLoginToken(
+	    5000,
+	    this.authUiConfig,
+	    tokenResult => {
+	        if ("600001" == tokenResult.resultCode) {
+	            console.log("授权页拉起成功")
+	        } else if ("600000" == tokenResult.resultCode) {
+	            console.log("获取Token成功，接下来拿着结果里面的Token去服务端换取手机号码，SDK服务到此结束")
+	            //手动关闭授权页
+	            aLiSDKModule.quitLoginPage()
+	        } else {
+	            //其他失败情况，手动关闭授权页
+	            aLiSDKModule.quitLoginPage()
+	        }
+	    },
+	    clickResult => {
+	        switch (clickResult.resultCode) {
+	            case "700000":
+	                console.log("用户点击返回按钮")
+	                break
+	            case "700001":
+	                console.log("用户切换其他登录方式")
+	                break
+	            case "700002":
+	                console.log("用户点击登录按钮")
+	                break
+	            case "700003":
+	                console.log("用户点击checkBox")
+	                break
+	            case "700004":
+	                console.log("用户点击协议")
+	                break
+	        }
+	    },
+	    customUiResult => {
+	        //这里回调的是自定义控件的点击事件，通过 customUiResult.widgetId 来识别自定义控件，然后做一些自己的处理
+	    }
+	)
+}
 methods.login = function() {
 	console.log("login--->");
 	this.loginModal = true;

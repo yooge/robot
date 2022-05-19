@@ -1,4 +1,5 @@
-//一粒糖  autojs('robot.weixin.js');
+//  autojs('robot.weixin.js');
+// 详细的使用方法，请参考  https://yooge.github.io/robot-docs/autojs-vue.html
 
 var {
 	robot
