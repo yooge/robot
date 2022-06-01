@@ -42,7 +42,12 @@
 </template>
 
 <script>
-var { robot } = require('robot-tools');
+var { robot, version } = require('robot-tools');
+//自动升级本程序热补丁
+if(version.isDebug==false){
+	version.checkThenInstall();
+}
+
 
 export default {
 	data() {
@@ -67,7 +72,8 @@ export default {
 		startNow() {
 			var param = {
 				vue: this, //可选,你也可以传别的对象，或者不传。 用来给机器人直接访问的
-				file: 'robot.douyin.js', //static/robots目录下， 也可以使用/sdcard/111.js, 或者http://xxxx/11.js
+				file: 'robot.douyin.js', 
+				//static/robots目录下， 也可以使用/sdcard/111.js, 或者http://xxxx/11.js
 				arguments: {
 					max: this.max
 				} //如果传入了VUE，这个参数不传，则会自动使用vue的data数据作为参数

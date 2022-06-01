@@ -21,10 +21,6 @@
 		    "path" : "pages/robots/douyin",
 		    "style" : {}
 		},
-		{
-			"path": "pages/crm/fans/index",
-			"style": {}
-		},
         {
             "path" : "pages/basics/layout",
             "style" : {}
