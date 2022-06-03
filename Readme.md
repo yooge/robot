@@ -20,7 +20,7 @@
 ## QQ群： 820320773
 # 快速开始：
 # 点这里查看文档 >>> [快速开始](https://yooge.github.io/robot-docs/index.html)
-
+## 文档移至 >>> [看文档](https://yooge.github.io/robot-docs/index.html)
 
 #### 1. 对app的控制(10分钟就可以上手)
 ```js
@@ -50,7 +50,7 @@ click(desc("评论"));
 
 
 #### 生态支持
-[AutoJS](https://hyb1996.github.io/AutoJs-Docs/#/)：全接口支持
+[AutoJS](https://yooge.github.io/robot-docs/index.html)：全接口支持
 
 [VUE](https://cn.vuejs.org/)：著名的渐进式JavaScript框架(傻瓜->高手),
 
