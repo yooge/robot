@@ -1,6 +1,6 @@
 {
     "name" : "myrobot2",
-    "appid" : "__UNI__9D97713",
+    "appid" : "__UNI__9D97713999",
     "appkey" : "962a0c80b0ef8b23a982ae846d9c5a89",
     "package" : "com.hammer.auto_debug",
     "SHA1" : "BF:28:B5:FB:9D:A3:20:27:28:FD:51:77:59:9B:F4:BA:23:E8:A1:88",
@@ -13,8 +13,8 @@
 	
     *******/
     "description" : "",
-    "versionName" : "1.0.37",
-    "versionCode" : 10037,
+    "versionName" : "1.0.10",
+    "versionCode" : 10010,
     "transformPx" : false,
     "app-plus" : {
         "compatible" : {
@@ -32,6 +32,12 @@
                 "android" : {
                     "hdpi" : ""
                 }
+            },
+            "ios" : {
+                "dSYMs" : false
+            },
+            "sdkConfigs" : {
+                "ad" : {}
             }
         },
         "splashscreen" : {

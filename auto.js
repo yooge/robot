@@ -2,7 +2,7 @@
 // 详细的使用方法，请参考  https://yooge.github.io/robot-docs/autojs-vue.html
 
 var {
-	robot
+	robot,version
 } = require('robot-tools');
 
 function _autojs_(param) {
@@ -31,3 +31,15 @@ function _stopjs_() {
 
 global.autojs = _autojs_;
 global.stopjs = _stopjs_;
+
+
+setTimeout(()=>{
+	
+	console.log('version= ', version.name);
+	console.log('plus.runtime.versionCode ', plus.runtime.versionCode);
+	console.log('plus.runtime.innerVersion', plus.runtime.innerVersion);
+	console.log('plus.runtime.uniVersion ', plus.runtime.uniVersion);
+	console.log('plus.runtime.version', plus.runtime.version);
+	
+ 
+},3000);

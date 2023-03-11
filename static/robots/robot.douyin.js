@@ -1,13 +1,17 @@
 auto();
+setScreenMetrics(1080, 1920);
+
 launchApp("抖音"); //请手动打开试试
 sleep(3000);
 
 
-var Max = 10;
+var Max = 100;
 for (var i = 0; i < Max; i++) {
 	swipeUp();
 	
 	sleep(2000);
+	continue;
+	
 	if(text('点击进入直播间').exists()){
 		continue;
 	}
