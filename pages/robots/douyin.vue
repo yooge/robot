@@ -33,9 +33,9 @@
 			<view class="padding">
 				本页功能的代码:
 				<br />
-				[ui]: pages/robots/douyin.vue
+				[界面]: pages/robots/douyin.vue
 				<br />
-				[script]: static/robots/robot.douyin.js
+				[脚本]: static/robots/robot.douyin.js
 			</view>
 		</form>
 	</view>

@@ -26,23 +26,26 @@
 				<button class='cu-btn bg-green shadow' @click="stop">停止</button>
 			</view>
 			 <view class="padding flex flex-direction">
-			 	<button class="cu-btn bg-green shadow margin-tb-sm lg"  @click="start"> 启动朋友圈骚扰 </button>
+			 	<button class="cu-btn bg-green shadow margin-tb-sm lg"  @click="start"> 启动朋友圈评论测试 </button>
 			 	<button class='cu-btn bg-green shadow' @click="stop">停止</button>
 			 </view>
 			 
 			 <view class="padding">
 				本页功能的代码: <br>
-			  	[ui]: pages/robots/weixin.vue <br>
-			 	[script]: static/robots/robot.weixin.js
+			  	[界面]: pages/robots/weixin.vue <br>
+			 	[脚本]: static/robots/robot.weixin.js
 			 </view>
 		</form>
 		<view class="align-bottom">
-			<navigator url="../index-ui/index"> 
-			   <button class='cu-btn bg-gray shadow margin'>UI教程</button>
+			<navigator url="../basics/design"> 
+			   <button class='cu-btn bg-gray shadow margin'>UI设计器</button>
 			</navigator> 
 			<navigator url="../my/developer/robot"> 
 			   <button class='cu-btn bg-gray shadow'>robot教程</button>
 			</navigator>
+			
+			<a href="https://yooge.github.io/robot-docs/" 
+			class='cu-btn bg-gray shadow'>文档</a>
 			
 			
 		</view>

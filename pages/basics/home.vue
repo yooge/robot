@@ -1,9 +1,27 @@
 <template name="basics">
 	<view>
 		<scroll-view scroll-y class="page">
-			<image   class="bgImg"></image>
-			<view class="padding-sm bg-gray">机器人测试</view>
+			<image   class="bgImg"></image> 
+			
+			
+			<view class="flex solid-bottom padding justify-start">
+				<view class="   "> 
+					<a href="https://yooge.github.io/robot-docs/"
+					class='cu-btn bg-gray shadow'>robot.Js文档</a>
+				</view>
+				<view class="  margin-left  ">
+					<navigator url="../basics/design">
+					 <button class='cu-btn bg-gray shadow  '>UI设计器</button>
+					</navigator> 
+					
+				</view>
+			</view>
+			
+			
+			<view class="padding-sm bg-gray">robotJs测试</view>
 			<view class="nav-list">
+				
+				
 				<navigator hover-class="none" url="/pages/robots/weixin" class="nav-li bg-green" navigateTo
 				 :style="[{animation: 'show 1.2s 1'}]"   >
 					<view class="nav-title">微信(easy)</view>
