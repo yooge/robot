@@ -6,8 +6,8 @@
 			
 			<view class="flex solid-bottom padding justify-start">
 				<view class="   "> 
-					<a href="https://yooge.github.io/robot-docs/"
-					class='cu-btn bg-gray shadow'>robot.Js文档</a>
+					<button @click="showdoc"
+					class='cu-btn bg-gray shadow'>robot.Js文档</button>
 				</view>
 				<view class="  margin-left  ">
 					<navigator url="../basics/design">
@@ -122,7 +122,13 @@
 		},
 		onShow() {
 			console.log("success")
+		},
+		methods: { 
+			showdoc(){
+				  plus.runtime.openURL('https://yooge.github.io/robot-docs/'); 
+			}
 		}
+		
 	}
 </script>
 

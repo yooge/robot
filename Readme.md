@@ -17,7 +17,7 @@
 #### 4. 无目标APP限制
 #### 5. 集成了流行的UI界面
 #### 
-## QQ群： 714554851
+## QQ群： 862460452
 #
 #快速开始：
 # 点这里查看文档 >>> [快速开始](https://yooge.github.io/robot-docs/index.html)
@@ -43,13 +43,14 @@ click(desc("评论"));
 
  
   
-## QQ群： 714554851
+## QQ群： 862460452
  
 ```js
   如果喜欢这个项目，可以请赠我一包华子 
 ```
 
-
+# 点这里查看文档 >>> [快速开始](https://yooge.github.io/robot-docs/index.html)
+## 文档移至 >>> [看文档](https://yooge.github.io/robot-docs/index.html)
 
 #### 生态支持
 [AutoJS](https://yooge.github.io/robot-docs/index.html)：全接口支持

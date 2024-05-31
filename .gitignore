@@ -3,5 +3,5 @@
 dist/
 node_modules/
 unpackage/
-android_debug.apk
 app-release
+./hbuilderx
