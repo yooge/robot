@@ -1,7 +1,7 @@
 {
   "scripts": {
     "1.初始化/依赖包": "npm install",
-    "2.安装调试的apk": "robot-tools init",
+    "2.请忽略—安装调试的apk": "robot-tools xxx",
     "3.加密/热补丁": "robot-tools deploy apk=false",
     "4.加密/热补丁/打APK包": "robot-tools deploy",
 	"5.加密/热补丁/打APK包[本地]": "robot-tools deploy apk=local makerpath=~/AndroidStudioProjects/HBuilder-Throne/make_apk"

@@ -4,4 +4,6 @@ dist/
 node_modules/
 unpackage/
 app-release
-./hbuilderx
+.hbuilderx
+.hbuilderx/launch.json
+.hbuilderx/launch.json
